@@ -16,6 +16,43 @@
 	</div>
 
 	<div id="right" class="container col-md-12 col-12">
+
+
+
+		<!-- Button trigger modal -->
+<button type="button" class="btn btn-custom" data-toggle="modal" data-target="#exampleModal">
+  Administrador
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Sesión de Administrador</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="" name="" class="col-md-8 container">
+			<input id="login-user-admin" type="text" placeholder="Usuario" class="col-md-12 form-control martopmin">
+			<input id="login-pass-admin" type="password" placeholder="Contraseña" class="col-md-12 form-control martopmin">			
+		</form>
+      </div>
+      <div class="modal-footer">
+        <!--button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button-->
+        <button type="button" class="btn btn-custom">Iniciar Sesión</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
 		<!-------------------------------------------FORMULARIO DE LOGIN-->
 		<form id="login" name="login" class="col-md-8 container">
 			<img src="img/logo-primary.png" class="img-fluid marbot">
@@ -44,6 +81,7 @@
 
 
 	<script type="text/javascript" src="js/jquery.js"></script>
+	<script src="js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
 	<script type="text/javascript" src="ajax.js"></script>
 

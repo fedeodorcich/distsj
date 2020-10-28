@@ -1,5 +1,4 @@
 $(document).ready(function(){
-   
     $("#login-btn").click(function(event){
     event.preventDefault();
     var user=$("#login-user").val();
@@ -10,17 +9,16 @@ $(document).ready(function(){
             url: 'verif.php',
             type: 'POST',
             data:{user,pass},
-            success: function(data){       
-                if(data == 0)
+            success: function(data){      
+                console.log(data); 
+                if(data != 1)
                 { 
-                    console.log(data);
                     $("#login").append(data).fadeIn();
                 }
                 else
                 {
-                    console.log(data);
-                    
-                }  
+                    window.location.href="main.php";                    
+                } 
             }
         });   
     });
