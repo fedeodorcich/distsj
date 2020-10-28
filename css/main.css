@@ -1,0 +1,208 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+html{
+	width: 100%;
+	height: 100%;
+}
+
+body{
+	background-color: #ebebeb;
+}
+
+/*----------PANTALLA DE INICIO--------------*/
+
+#left{
+	width: 60%;
+	background-image: url('../img/Lagos, Portugal.png');
+	background-size: cover;
+	position: absolute;
+	left: 0;
+	height: 100%;
+}
+#left::after{
+	content: '';
+	width: 100%;
+	height: 100%;
+	background-color: #ae174c;
+	opacity: .5;
+}
+
+#right{
+	background-color: #ebebeb;
+	width: 40%;
+	position: absolute;
+	right: 0;
+	height: 100%;
+}
+
+.martopmin{
+	margin-top: 10px;
+}
+
+.martopmax{
+	margin-top: 20px;
+}
+
+#right #login , #right #signup{
+	margin-top: 10em;
+} 
+
+#right #signup{
+	display: none;
+}
+
+.btn-custom{
+	background-color: #ae174c;
+	border-radius:0px;
+	color: #ffffff;
+	border: none;
+}
+
+.btn-custom:hover , .btn-custom:focus{
+	background-color: #ffffff;
+	border-radius:0px;
+	color: #ae174c;
+	border: none;
+}
+
+#right form input{
+	border-radius: 0px;
+	color: grey;
+	font-style: italic;	
+}
+
+.marbot{
+	margin-bottom: 3em;
+}
+
+.center-block{
+	display: block;
+	margin: 0 auto;
+}
+
+.secondary-link{
+	color: #ae174c;
+}
+
+#signup div{
+	padding: 0;
+	margin: 30px auto;
+	display: block;
+}
+/*----------------------------------------------*/
+
+/*----------PANTALLA PRINCIPAL-------------------*/
+nav img{
+	width: 20px;
+	height: 8px; 
+}
+
+nav button{
+	display: none;
+}
+
+.bg-custom{
+	background-color: #ae174c;
+}
+
+#nav-logo{
+	margin-right: 40px;
+}
+
+#nav-logo img{
+	width: 150px;
+}
+
+.lines{
+	position: absolute;
+	width: 30px;
+	height: 2px;
+	background-color: white;
+	color: width;
+}
+
+.line-1{
+
+}
+.line-2{
+	transform: translateY(10px);
+}
+.line-3{
+	transform: translateY(20px);
+}
+
+#sidebar{
+	display: none;
+	width: 20%;
+	background-color: pink;
+	color: white;
+	position: absolute;
+	z-index: 100;
+	height: 100%;
+	right: 0;
+	padding-top:4em;
+}
+
+#sidebar ul{
+	list-style:none;
+}
+
+#sidebar ul li{
+	margin:10px auto;
+}
+
+#sidebar ul li a{
+	color: white;
+}
+
+#menu-btn-label{
+	display: block;
+	width: 30px;
+	height: 30px;
+	float: right;
+}
+
+#menu-btn-label:hover{
+	cursor: pointer;
+}
+
+#banner{
+	width: 100%;
+	height: 200px;
+}
+
+#promos{
+	width: 100%;
+}
+
+#mainer{
+	width: 100%;
+}
+
+.bigcard{
+	display: none;
+	top: 0;
+	left: 0;
+	position: absolute;
+	z-index: 500;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,.5);
+
+}
+
+.content{
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 4em;
+	width: 80%;
+	height: 80%;
+	background-color: white;
+	border-radius: 5px;
+	margin:0 auto;
+}
+
+/*---------------------------------------------*/

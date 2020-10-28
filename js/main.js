@@ -1,0 +1,12 @@
+$(document).ready(function(){
+	$("#to-reg").click(function(){
+		$("#login").fadeOut(function(){
+			$("#signup").fadeIn();
+		});
+	});
+	$("#back-tolog").click(function(){
+		$("#signup").fadeOut(function(){
+			$("#login").fadeIn();
+		});
+	});
+});
