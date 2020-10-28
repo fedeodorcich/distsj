@@ -1,5 +1,5 @@
 <?php 
-error_reporting(0);
+
 	require("conexbd.php");
 	$user=$_POST['user'];
 	$pass=$_POST['pass'];
@@ -13,7 +13,7 @@ error_reporting(0);
 	$row = $result->fetchAll();
 
 
-	if($row[0]['usuario']==$user){
+	if(($row!=false)&&($row[0]['usuario']==$user)){
 		echo 1;
 	}
 	else{

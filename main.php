@@ -45,7 +45,7 @@
 	</div-->
 
 
-<div id="promos" class="col-md-11 container" style="background-color: #ffffff; border-radius: 5px; padding: 20px 0; margin-top:2em;">
+<div id="mainer" class="col-md-11 container" style="background-color: #ffffff; border-radius: 5px; padding: 20px 0; margin-top:2em;">
 
 
 	<div class="card-deck" style="margin: 20px;">
@@ -93,11 +93,6 @@
 
 </div>
 
-
-
-<div id="mainer" class="container">
-			
-</div>
 
 
 
