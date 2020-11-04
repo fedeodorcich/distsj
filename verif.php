@@ -4,23 +4,24 @@
 	$user=$_POST['user'];
 	$pass=$_POST['pass'];
 
-
-	$result = $conexion->prepare("SELECT * FROM usuario WHERE usuario='$user' AND pass='$pass'");
+	if($user!='admin'){
+		$pass = hash('sha256', $pass);
+	}
+	$result = $conexion->prepare("SELECT * FROM usuario WHERE nombre = '$user' AND pass = '$pass' ");
  
 	$result->execute();
 
-
 	$row = $result->fetchAll();
-
-
-	if(($row!=false)&&($row[0]['usuario']==$user)){
+	
+	if(($row!=false)&&($row[0]['nombre']==$user)&&($row[0]['admn']==false)){
 		echo 1;
 	}
 	else{
-	
-	echo '<div class="alert alert-danger" role="alert">
-  				Usuario o contraseña incorrectos
-			</div>';
-	}
-	
- ?>
+			if($row[0]['admn']==true){
+				echo "2";
+			}else{
+				echo '<div class="alert alert-danger" role="alert">
+				Usuario o contraseña incorrectos
+				</div>';}
+		 }	  
+?>
