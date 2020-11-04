@@ -11,6 +11,11 @@ body{
 	background-color: #ebebeb;
 }
 
+.row{
+	margin: 0;
+	padding: 0;
+}
+
 /*----------PANTALLA DE INICIO--------------*/
 
 #left{
@@ -181,7 +186,7 @@ nav button{
 	width: 100%;
 }
 
-.bigcard{
+#product-modal{
 	display: none;
 	top: 0;
 	left: 0;
@@ -205,6 +210,7 @@ nav button{
 	margin:0 auto;
 }
 
+
 .text-muted{
 	text-decoration:line-through;
 }
@@ -212,4 +218,32 @@ nav button{
 .card-text{
 	margin-bottom: 0px;
 }
+#mainer .card{
+	cursor: pointer;
+}
+
+.nopadding{
+	padding:0;
+}
+
+#description-product{
+	overflow-y: scroll;
+	height: 250px;
+	margin-top: 30px;
+}
+
+
+.close-product-modal{
+	border-radius: 100%;
+	position: absolute;
+	bottom: 10%;
+	left: 0;
+	right: 0;
+	width: 30px;
+	height: 30px;
+	margin: 0 auto;
+}
+
+
+
 /*---------------------------------------------*/
