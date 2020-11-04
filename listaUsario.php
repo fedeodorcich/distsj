@@ -1,4 +1,5 @@
 <?php
+/*
 require "conexbd.php";
 
 $statament = $conexion->prepare('SELECT * FROM usuario');
@@ -81,3 +82,4 @@ $resultado = $statament->fetchAll();
     -->
   </body>
 </html>
+*/

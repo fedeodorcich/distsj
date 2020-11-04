@@ -19,12 +19,12 @@
 
 
 
-		<!-- Button trigger modal -->
+		<!-- Button trigger modal --
 <button type="button" class="btn btn-custom" data-toggle="modal" data-target="#exampleModal">
   Administrador
-</button>
+</button>-->
 
-<!-- Modal -->
+<!-- Modal 
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -41,17 +41,12 @@
 		</form>
       </div>
       <div class="modal-footer">
-        <!--button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button-->
+        <!--button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button--
         <button type="button" class="btn btn-custom">Iniciar Sesión</button>
       </div>
     </div>
   </div>
-</div>
-
-
-
-
-
+</div> -->
 
 		<!-------------------------------------------FORMULARIO DE LOGIN-->
 		<form id="login" name="login" class="col-md-8 container">
@@ -61,15 +56,20 @@
 			<button id="login-btn" class="col-md-12 btn btn-custom martopmax">Ingresar</button>
 			<a href="#" id="to-reg" class="text-center secondary-link center-block">Registrar</a>
 			
+		<!-- Button visita -->
+		<button id="visita" class="col-md-4 center-block btn btn-custom">
+		DE VISITA
+		</button>	
+
 		</form>
 		<!-------------------------------------------FORMULARIO DE REGISTRO-->
-		<form id="signup" name="reg" class="col-md-8 container" action="conexion.php" method="POST">
+		<form id="signup" name="reg" class="col-md-8 container" action="registro.php" method="POST">
 			<img src="img/logo-primary.png" class="img-fluid marbot">
-			<input type="text" class="col-md-12 form-control martopmin" placeholder="Nombre completo">
-			<input type="text" class="col-md-12 form-control martopmin" placeholder="Correo electrónico">
-			<input type="text" class="col-md-12 form-control martopmin" placeholder="Teléfono">
-			<input type="password" class="col-md-12 form-control martopmin" placeholder="Contraseña">
-			<input type="password" class="col-md-12 form-control martopmin" placeholder="Repetir contraseña">
+			<input type="text" class="col-md-12 form-control martopmin" name="usuario" placeholder="Nombre">
+			<input type="text" class="col-md-12 form-control martopmin" name="correo" placeholder="Email">
+			<input type="text" class="col-md-12 form-control martopmin" name="telefono" placeholder="Teléfono">
+			<input type="password" class="col-md-12 form-control martopmin" name="password" placeholder="Contraseña">
+			<input type="password" class="col-md-12 form-control martopmin" name="password2" placeholder="Repetir contraseña">
 			<div class="row text-center">
 				<a href="#" class="secondary-link" id="back-tolog">Volver</a>
                 <button class="btn btn-custom">Registrar</button>
