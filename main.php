@@ -99,18 +99,13 @@
 
 
 
-
-
-<div>
-  <div class="card col-md-2">
-    <img src="img/products/mortadela.jpg" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h6 class="card-title">Mortadela Paladini</h6>
-      <p class="card-text text-success">$300,45</p>
-      <small class="text-muted">$200,00</small>
-    </div>
+<div class="container col-md-11" style="background-color: white; border-radius: 5px;">
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+    <div class="col-md-3"></div>
+   
   </div>
 </div>
+
 
 
 
