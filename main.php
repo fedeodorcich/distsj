@@ -51,6 +51,7 @@
 
 
 	<div class="card-deck" style="margin: 20px;">
+    <h3 class="col-md-12">Ofertas</h3>
   <div class="card">
     <img src="img/products/aceite.jpg" class="card-img-top" alt="...">
     <div class="card-body">
@@ -100,44 +101,21 @@
 
 
 
-<div class="row row-cols-1 row-cols-md-2">
-  <div class="col mb-4">
-    <div class="card">
-      <img src="img/products/mortadela.jpg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-      </div>
-    </div>
-  </div>
-  <div class="col mb-4">
-    <div class="card">
-      <img src="img/products/mortadela.jpg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-      </div>
-    </div>
-  </div>
-  <div class="col mb-4">
-    <div class="card">
-      <img src="..." class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
-      </div>
-    </div>
-  </div>
-  <div class="col mb-4">
-    <div class="card">
-      <img src="..." class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-      </div>
+<div>
+  <div class="card col-md-2">
+    <img src="img/products/mortadela.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h6 class="card-title">Mortadela Paladini</h6>
+      <p class="card-text text-success">$300,45</p>
+      <small class="text-muted">$200,00</small>
     </div>
   </div>
 </div>
+
+
+
+
+
 
 
 <!---------------------------------------------MODAL DEL PRODUCTO--->
