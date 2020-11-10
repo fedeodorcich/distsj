@@ -6,11 +6,15 @@
     <title>Administrador</title>
 </head>
 <body>
-    <?php require "view/header.html" ?>
+    <!-- require'': will produce a fatal error (E_COMPILE_ERROR) and stop the script
+         include'': will only produce a warning (E_WARNING) and the script will continue-->
+    <?php require "view/headeradmin.html" ?>
 
     
+    <a href="crudadmin.php" id="usuario" class="text-center secondary-link center-block">usurio</a>
+    <div>
+	<a href="crudprod.php" id="producto" class="text-center secondary-link center-block">producto</a>
 
-
-    <?php require "view/footer.html" ?>
+    <?php require "view/footeradmin.html" ?>
 </body>
 </html>
