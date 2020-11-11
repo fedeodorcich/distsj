@@ -1,4 +1,5 @@
 $(document).ready(function(){
+	$(".owl-carousel").owlCarousel();
 	$("#to-reg").click(function(){
 		$("#login").fadeOut(function(){
 			$("#signup").fadeIn();

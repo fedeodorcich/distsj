@@ -1,8 +1,13 @@
+<?php
+include("conexbd.php");
+?>
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Distribuidora San Juan</title>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
 	<link rel="stylesheet" type="text/css" href="css/animate.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
   <link rel="stylesheet" href="font-awesome/css/all.min.css">
@@ -27,10 +32,20 @@
     </form>
   </div>
 
+  <button id="btn-menu" name="btn-menu" style="display: none;">
+    
+  </button>
+  
+  <label for="" class="burgermenu">
+     <span class="lines line-1"></span>
+     <span class="lines line-2"></span>
+     <span class="lines line-3"></span>
+  </label>
+
 </nav>
 
 
-	<!--div id="sidebar" class="container">
+	<div id="sidebar" class="container">
 		<span>Usuario</span>
 		<ul>
 			<li><a href="">Carrito</a></li>
@@ -43,7 +58,7 @@
 	
 	<div id="banner" class="container">
 		
-	</div-->
+	</div>
 
 <!---------------------------------------------BARRA DE OFERTAS------->
 
@@ -53,7 +68,7 @@
 	<div class="card-deck" style="margin: 20px;">
     <h3 class="col-md-12">Ofertas</h3>
   <div class="card">
-    <img src="img/products/aceite.jpg" class="card-img-top" alt="...">
+    <img src="img/products/aceite1l.jpg" class="card-img-top" alt="...">
     <div class="card-body">
       <h6 class="card-title">Aceite Natura 1L</h6>
       <p class="card-text text-success">$1260,15</p>
@@ -77,7 +92,7 @@
     </div>
   </div>
   <div class="card">
-    <img src="img/products/jamon.jpeg" class="card-img-top" alt="...">
+    <img src="img/products/jamoncrudo.jpeg" class="card-img-top" alt="...">
     <div class="card-body">
       <h6 class="card-title">Jamón Crudo Paladini</h6>
       <p class="card-text text-success">$300,45</p>
@@ -92,6 +107,7 @@
       <small class="text-muted">$200,00</small>
     </div>
   </div>
+  
 </div>
 
 </div>
@@ -99,12 +115,61 @@
 
 
 
-<div class="container col-md-11" style="background-color: white; border-radius: 5px;">
-  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
-    <div class="col-md-3"></div>
-   
+
+
+
+
+
+
+<!--div class="owl-carousel" id="mainer"-->
+
+    <?php /*
+               $statament = $conexion->prepare('SELECT * FROM producto INNER JOIN promo ON producto.id=promo.producto');
+               $statament->execute();
+               $resultado = $statament->fetchAll();
+               foreach ($resultado as $row)
+               {
+                  echo $resultado['path'];
+               }*/
+               ?>
+
+  <!---------------------ITEM------------------->
+  
+  <!---------------------ITEM------------------->
+  <div>
+
   </div>
+  <!---------------------ITEM------------------->
+  <div>
+
+  </div>
+  <!---------------------ITEM------------------->
+  <div>
+
+  </div>
+  <!---------------------ITEM------------------->
+  <div>
+
+  </div>
+  <!---------------------ITEM------------------->
+  <div>
+
+  </div>
+  <!---------------------ITEM------------------->
+  <div>
+
+  </div>
+
 </div>
+
+
+
+
+
+
+
+
+
 
 
 
@@ -158,6 +223,8 @@
 
 
 	<script type="text/javascript" src="js/jquery.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
 
 </body>

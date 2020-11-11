@@ -1,5 +1,5 @@
 <?php include("conexbd.php")?>
-<?php include("view/headeradmin.html")?>
+<?php include("view/header.html")?>
 
    <div class="container p-4">
     
@@ -102,7 +102,7 @@
                            <td><?php echo $row['stock']  ?></td>
                            <td><?php echo $row['precio']  ?></td>
                            <td><?php echo $row['tipo']  ?></td>
-                           <td><?php echo $row['img'] ?></td>
+                           <td><?php echo $row['path'] ?></td>
                            
                          <!--  <td><?php// echo $row['created_ad']  ?></td> -->
                            <td>
@@ -126,7 +126,7 @@
    </div>
           
 
- <?php include("view/footeradmin.html")?>
+ <?php include("view/footer.html")?>
 
 
 

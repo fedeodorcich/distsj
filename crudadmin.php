@@ -4,7 +4,7 @@ include("conexbd.php");
 
 ?>
 
-<?php include("view/headeradmin.html")?> 
+<?php include("view/header.html")?> 
 <div class="container p-4">
  <div class="row">
     <div class="col-md-4">
@@ -70,4 +70,4 @@ include("conexbd.php");
  </div>
 </div>
 
-<?php include("view/footeradmin.html")?>
+<?php include("view/footer.html")?>
