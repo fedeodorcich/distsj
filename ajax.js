@@ -11,7 +11,7 @@ $(document).ready(function(){
             data:{user,pass},
             success: function(data){      
                 console.log(data); 
-                if(data != 1)
+                if((data != 1)&&(data != 2))
                 { 
                     $("#login").append(data).fadeIn();
                 }
@@ -21,6 +21,5 @@ $(document).ready(function(){
                 } 
             }
         });   
-    });
-   
+    });   
 });

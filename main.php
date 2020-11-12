@@ -1,5 +1,11 @@
 <?php
 include("conexbd.php");
+session_start();
+$varsession=$_SESSION['user'];
+if(($varsession==null)||($varsession==''))
+{
+    header('Location: index.html');
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -16,7 +22,11 @@ include("conexbd.php");
 </head>
 <body>
 
-	<nav class="navbar navbar-expand-lg navbar-dark bg-custom">
+	<nav class="navbar navbar-expand-lg navbar-dark">
+    <button type="button" id="sidebarCollapse" class="btn btn-info">
+                        <i class="fas fa-align-left"></i>
+                        <span></span>
+                    </button>
   <a href="#" id="nav-logo">
   		<img src="img/logo-secondary.png" class="img-fluid">
   </a>
@@ -27,90 +37,19 @@ include("conexbd.php");
   <div id="search-form">
    
     <form class="form-inline" >
-      <input class="form-control form-control-sm mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-sm btn-light my-2 my-sm-0" type="submit">Search</button>
+      <input class="form-control form-control-sm mr-sm-2" type="search" placeholder="Búsqueda" aria-label="Search">
+      <button class="btn btn-sm btn-light my-2 my-sm-0" type="submit">Buscar</button>
     </form>
   </div>
 
-  <button id="btn-menu" name="btn-menu" style="display: none;">
-    
-  </button>
   
-  <label for="" class="burgermenu">
-     <span class="lines line-1"></span>
-     <span class="lines line-2"></span>
-     <span class="lines line-3"></span>
-  </label>
 
 </nav>
 
 
-	<div id="sidebar" class="container">
-		<span>Usuario</span>
-		<ul>
-			<li><a href="">Carrito</a></li>
-			<li><a href="">Mis Compras</a></li>
-		</ul>
-
-		<a href="" class="btn btn-danger">Cerrar Sesión</a>
-
-	</div>
-	
-	<div id="banner" class="container">
-		
-	</div>
 
 <!---------------------------------------------BARRA DE OFERTAS------->
 
-<div id="mainer" class="col-md-11 container" style="background-color: #ffffff; border-radius: 5px; padding: 20px 0; margin-top:2em;">
-
-
-	<div class="card-deck" style="margin: 20px;">
-    <h3 class="col-md-12">Ofertas</h3>
-  <div class="card">
-    <img src="img/products/aceite1l.jpg" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h6 class="card-title">Aceite Natura 1L</h6>
-      <p class="card-text text-success">$1260,15</p>
-      <small class="text-muted">$200,00</small>
-    </div>
-  </div>
-  <div class="card">
-    <img src="img/products/coca.jpg" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h6 class="card-title">Coca-Cola 2L</h6>
-      <p class="card-text text-success">$503,70</p>
-      <small class="text-muted">$200,00</small>
-    </div>
-  </div>
-  <div class="card">
-    <img src="img/products/fanta.jpg" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h6 class="card-title">Fanta Naranja 2L</h6>
-      <p class="card-text text-success">$300,45</p>
-      <small class="text-muted">$200,00</small>
-    </div>
-  </div>
-  <div class="card">
-    <img src="img/products/jamoncrudo.jpeg" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h6 class="card-title">Jamón Crudo Paladini</h6>
-      <p class="card-text text-success">$300,45</p>
-      <small class="text-muted">$200,00</small>
-    </div>
-  </div>
-  <div class="card">
-    <img src="img/products/mortadela.jpg" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h6 class="card-title">Mortadela Paladini</h6>
-      <p class="card-text text-success">$300,45</p>
-      <small class="text-muted">$200,00</small>
-    </div>
-  </div>
-  
-</div>
-
-</div>
 
 
 
@@ -175,39 +114,156 @@ include("conexbd.php");
 
 
 
+<body>
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar" class="active">
+            <span class="bg-info"><?php echo $varsession; ?></span>
+            <ul class="list-items container">
+                <li>
+                    <a href="#"><i class="fas fa-shopping-cart"></i>Carrito</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fas fa-box-open"></i>Pedidos</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fas fa-envelope"></i>Contacto</a>
+                </li>
+            </ul>
+            <form action="destroyer.php">
+                <input type="submit" name="" id="session-destroyer" name="session-destroyer" style="display: none;">
+                <label for="session-destroyer" class="btn btn-danger"><i class="fas fa-sign-out-alt"></i>Cerrar Sesión</label>
+            </form>
+            
+
+        </nav>
+
+  <!-- -------------------------------------------------------Page Content  -->
+    <div id="content">
+
+            
+      <div id="mainer" class="col-md-11 container" style="background-color: #ffffff; border-radius: 5px; padding: 20px 0; margin-top:2em;">
+
+
+  <div class="card-deck" style="margin: 20px;">
+    <h3 class="col-md-12">Ofertas</h3>
+  <div class="card">
+    <img src="img/products/natura1l.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h6 class="card-title">Aceite Natura 1L</h6>
+      <p class="card-text text-success">$1260,15</p>
+      <small class="text-muted">$200,00</small>
+    </div>
+  </div>
+  <div class="card">
+    <img src="img/products/coca.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h6 class="card-title">Coca-Cola 2L</h6>
+      <p class="card-text text-success">$503,70</p>
+      <small class="text-muted">$200,00</small>
+    </div>
+  </div>
+  <div class="card">
+    <img src="img/products/fanta.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h6 class="card-title">Fanta Naranja 2L</h6>
+      <p class="card-text text-success">$300,45</p>
+      <small class="text-muted">$200,00</small>
+    </div>
+  </div>
+  <div class="card">
+    <img src="img/products/jamoncrudo.jpeg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h6 class="card-title">Jamón Crudo Paladini</h6>
+      <p class="card-text text-success">$300,45</p>
+      <small class="text-muted">$200,00</small>
+    </div>
+  </div>
+  <div class="card">
+    <img src="img/products/mortadela.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h6 class="card-title">Mortadela Paladini</h6>
+      <p class="card-text text-success">$300,45</p>
+      <small class="text-muted">$200,00</small>
+    </div>
+  </div>
+  
+</div>
+
+</div>
+
+
+
+    </div>
+
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 <!---------------------------------------------MODAL DEL PRODUCTO--->
 
 	<div id="product-modal">
+
 		<div class="content row container">
-			<div class="col-md-8" style="padding: 0;">
-        <img src="img/Lagos, Portugal.png" class="img-fluid container" style="border-radius:5px 0 0 5px; max-width: 70%;">
+			<div class="col-md-12" style="padding: 0;">
+        <img src="" class="container text-center" style="max-width: 70%;">
       </div>
       
-      <div class="col-md-4" style="padding: 30px;">
-        <h3>Producto 1</h3>
-        <form action="">
-          <div class="row">
-            <span class="col-md-19 nopadding" style="margin-right:10px;">Seleccione la cantidad :</span>
-            <select name="cantidad" id="cantidad" class=" form-control form-control-sm col-md-3 nopadding" style="margin-left:10px;">
-               <option value="1">1</option>
-               <option value="2">2</option>
-               <option value="3">3</option>
-               <option value="4">4</option>
-               <option value="5">5</option>
-            </select>
-          </div>
-        </form>
-        <div class="col-md-8 container text-center">
-           <button class="btn btn-custom col-md-12" style="margin-top: 10px;">Comprar</button>
-           <button class="btn btn-custom col-md-12" style="margin-top: 10px;">Agregar al Carrito</button>
-        </div>
-        <div id="description-product">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, eum eos velit vero natus tempora quisquam labore maxime ipsum perferendis a libero temporibus molestias voluptatibus reiciendis nobis. Doloremque sapiente iure maiores sed consequuntur repellendus optio illum laudantium corporis recusandae omnis velit placeat veritatis nulla, perspiciatis quos aperiam dolor? Alias iusto vel consectetur officia explicabo quas architecto tenetur optio laboriosam deserunt ullam dolorem, voluptatibus nihil. Ratione, quasi recusandae officiis qui! Similique iusto quidem dicta praesentium velit dolorum sapiente itaque sequi deleniti, odio, laborum aliquam cumque dolorem nulla exercitationem natus maiores dolores tempora, nobis voluptate libero. Corporis doloremque, in saepe itaque pariatur!</p>
-        </div>       
-      </div>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla tenetur quod animi unde. Dignissimos dolorem libero, ipsa quos blanditiis, assumenda.</p>
+      <form class="col-md-12 row container text-center">
+          <select name="" id="">
+              <option value="">1</option>
+              <option value="">2</option>
+              <option value="">3</option>
+              <option value="">4</option>
+              <option value="">5</option>
+          </select>
+          <input type="text" value="Agregar al carrito">
+      </form>
+
+
 		</div>
 
       <a href="#" class="close-product-modal">
@@ -215,6 +271,9 @@ include("conexbd.php");
       </a>
 
 	</div>
+<!--------------------------------------------------------------------->
+
+
 
 
 	<footer>
@@ -222,10 +281,27 @@ include("conexbd.php");
 	</footer>
 
 
+
+
+
+
 	<script type="text/javascript" src="js/jquery.js"></script>
+  <!-- Popper.JS -->
+    <script src="js/popper.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/owl.carousel.min.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
+
+
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+        });
+    </script>
+
 
 </body>
 </html>

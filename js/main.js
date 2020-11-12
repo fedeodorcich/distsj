@@ -23,5 +23,4 @@ $(document).ready(function(){
 	$(".close-product-modal").click(function(){
 		$("#product-modal").fadeOut();
 	});
-
 });

@@ -7,8 +7,14 @@ html{
 	height: 100%;
 }
 
+@font-face {
+	font-family: 'Century-Gothic';
+	src: url('../fonts/gothic.ttf');
+}
+
 body{
 	background-color: #ebebeb;
+	font-family: 'Century-Gothic';
 }
 
 .row{
@@ -120,69 +126,140 @@ nav button{
 	width: 150px;
 }
 
-.lines{
-	position: absolute;
-	width: 30px;
-	height: 2px;
-	background-color: white;
-	color: width;
+/*----------------------------------------------------------SIDEBAR----------*/
+*
+    DEMO STYLE
+*/
+
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #fafafa;
 }
 
-.line-1{
+p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1em;
+    font-weight: 300;
+    line-height: 1.7em;
+    color: #999;
+}
 
+a,
+a:hover,
+a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
 }
-.line-2{
-	transform: translateY(10px);
+
+.navbar {
+    padding: 15px 10px;
+    background: #fff;
+    border: none;
+    border-radius: 0;
+    /*margin-bottom: 40px;*/
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    background-color: #ae174c;
 }
-.line-3{
-	transform: translateY(20px);
+
+.navbar-btn {
+    box-shadow: none;
+    outline: none !important;
+    border: none;
+}
+
+.line {
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px dashed #ddd;
+    margin: 40px 0;
+}
+
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+
+.wrapper {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+}
+
+#sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    background: #252525;
+    color: #fff;
+    transition: all 0.3s;
+}
+
+#sidebar span{
+	font-size: 25px;
+	width: 100%;
+}
+
+#sidebar.active {
+    margin-left: -250px;
+}
+
+.list-items{
+	list-style: none;
+}
+
+.list-items li{
+	padding: 1em;
+}
+
+.list-items li a i{
+	margin-right:10px; 
+}
+
+
+a[data-toggle="collapse"] {
+    position: relative;
+}
+
+.dropdown-toggle::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+
+
+
+
+
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+
+#content {
+    width: 100%;
+    padding: 20px;
+    min-height: 100vh;
+    transition: all 0.3s;
+}
+
+/* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+
+@media (max-width: 768px) {
+    #sidebar {
+        margin-left: -250px;
+    }
+    #sidebar.active {
+        margin-left: 0;
+    }
+    #sidebarCollapse span {
+        display: none;
+    }
 }
 /*----------------------------------------------------------SIDEBAR----------*/
-#sidebar{
-	/*display: none;*/
-	width: 20%;
-	background-color:  #ae174c;
-	color: white;
-	position: absolute;
-	z-index: 1000;
-	height: 100%;
-	right: 0;
-	padding-top:4em;
-	border: none;
-}
-
-#sidebar ul{
-	list-style:none;
-}
-
-#sidebar ul li{
-	margin:10px auto;
-}
-
-#sidebar ul li a{
-	color: white;
-}
-
-#menu-btn-label{
-	display: block;
-	width: 30px;
-	height: 30px;
-	float: right;
-}
-
-#menu-btn-label:hover{
-	cursor: pointer;
-}
-/*----------------------------------------------------------SIDEBAR----------*/
-#banner{
-	width: 100%;
-	height: 200px;
-}
-
-#promos{
-	width: 100%;
-}
-
 #mainer{
 	width: 100%;
 }
@@ -203,12 +280,17 @@ nav button{
 	position: absolute;
 	left: 0;
 	right: 0;
-	top: 4em;
-	width: 80%;
-	height: 80%;
+	top: 2em;
+	width: 50%;
+	height: 90%;
 	background-color: white;
 	border-radius: 5px;
 	margin:0 auto;
+}
+
+.content div img, .content form{
+	margin: 0 auto;
+	display: block;
 }
 
 
@@ -252,3 +334,42 @@ nav button{
 
 
 /*---------------------------------------------*/
+
+
+
+
+/*----------------------------------------------------------SCROLLBAR----------*/
+::-webkit-scrollbar {
+  width: 5px;
+  height: 3px;
+}
+::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
+}
+::-webkit-scrollbar-thumb {
+  background: #e1e1e1;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ffffff;
+}
+::-webkit-scrollbar-thumb:active {
+  background: #ae174c;
+}
+::-webkit-scrollbar-track {
+  background: #666666;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-track:hover {
+  background: #666666;
+}
+::-webkit-scrollbar-track:active {
+  background: #333333;
+}
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+/*---------------------------------------------------------------------------------------------*/
