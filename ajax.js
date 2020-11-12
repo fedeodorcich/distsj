@@ -28,7 +28,7 @@ $(document).ready(function(){
     let id = $("#iduser").val();
     event.preventDefault();
     console.log(id);
-    /*$.ajax({
+    $.ajax({
             url: 'addtocart.php',
             type: 'POST',
             data:{user,producto,cantidad},
@@ -44,5 +44,5 @@ $(document).ready(function(){
                 } 
             }
         });   
-    });  */
+    });  
 });

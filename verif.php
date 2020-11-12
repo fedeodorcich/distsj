@@ -23,7 +23,7 @@
 		{
 			session_start();//---se inicia la sesion
 			$_SESSION['user']=$row[0]['nombre'];//---se crea la variable de sesion
-			$_SESSION['id']=$row[0]['id'];
+			//$_SESSION['id']=$row[0]['id'];
 			echo 1;
 		}
 		else

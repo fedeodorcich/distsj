@@ -3,7 +3,7 @@ include("conexbd.php");
 session_start();
 $id='';
 $varsession=$_SESSION['user']; //-----------variable de session (user)
-$idsession= $_SESSION['id'];//------------variable de sesion (id)
+//$idsession= $_SESSION['id'];//------------variable de sesion (id)
 if(($varsession==null)||($varsession==''))
 {
     header('Location: index.html');
@@ -26,7 +26,7 @@ if(($varsession==null)||($varsession==''))
 <body>
 
 <!---------------------------DE ACA SACO EL ID----------------->
-<span style="display:none;" id="iduser"><?php echo $idsession;?></span>
+<span style="display:none;" id="iduser"><?php //echo $idsession;?></span>
 <!------------------------------------------------------------->
 
 	<nav class="navbar navbar-expand-lg navbar-dark">
