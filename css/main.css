@@ -259,11 +259,11 @@ a[data-toggle="collapse"] {
         display: none;
     }
 }
-/*----------------------------------------------------------SIDEBAR----------*/
+
 #mainer{
 	width: 100%;
 }
-
+/*------------------------------------------------------MODAL----------*/
 #product-modal{
 	display: none;
 	top: 0;
@@ -314,10 +314,11 @@ a[data-toggle="collapse"] {
 	padding:0;
 }
 
-#description-product{
-	overflow-y: scroll;
-	height: 250px;
-	margin-top: 30px;
+.description-product{
+	font-size: 15px;
+	font-weight: lighter;
+	font-style: italic;
+	padding: 10px;
 }
 
 
@@ -332,6 +333,16 @@ a[data-toggle="collapse"] {
 	margin: 0 auto;
 }
 
+#addtocart{
+	border-radius: 0px 0px 5px 5px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+
+.selectmini{
+	width: 70px;
+}
 
 /*---------------------------------------------*/
 

@@ -1,11 +1,14 @@
 <?php
 include("conexbd.php");
 session_start();
-$varsession=$_SESSION['user'];
+$id='';
+$varsession=$_SESSION['user']; //-----------variable de session (user)
+$idsession= $_SESSION['id'];//------------variable de sesion (id)
 if(($varsession==null)||($varsession==''))
 {
     header('Location: index.html');
 }
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -21,6 +24,10 @@ if(($varsession==null)||($varsession==''))
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
+
+<!---------------------------DE ACA SACO EL ID----------------->
+<span style="display:none;" id="iduser"><?php echo $idsession;?></span>
+<!------------------------------------------------------------->
 
 	<nav class="navbar navbar-expand-lg navbar-dark">
     <button type="button" id="sidebarCollapse" class="btn btn-info">
@@ -248,27 +255,34 @@ if(($varsession==null)||($varsession==''))
 
 		<div class="content row container">
 			<div class="col-md-12" style="padding: 0;">
-        <img src="" class="container text-center" style="max-width: 70%;">
+        <img src="" class="container text-center" style="max-width: 60%;">
       </div>
       
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla tenetur quod animi unde. Dignissimos dolorem libero, ipsa quos blanditiis, assumenda.</p>
+      <p class="description-product text-center">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla tenetur quod animi unde. Dignissimos dolorem libero, ipsa quos blanditiis, assumenda.</p>
+
       <form class="col-md-12 row container text-center">
-          <select name="" id="">
+
+          <div class="col-md-6 row" style="margin: 0 auto; ">
+              <p style="color: black; font-size: 15px;">Seleccione Cantidad: </p> 
+               <select name="" id="" class="form-control form-control-sm selectmini">
               <option value="">1</option>
               <option value="">2</option>
               <option value="">3</option>
               <option value="">4</option>
               <option value="">5</option>
           </select>
-          <input type="text" value="Agregar al carrito">
+          </div>
+         
+          <a href="#" class="btn btn-custom col" id="addtocart">Agregar al carrito</a>
+         
       </form>
 
 
 		</div>
 
-      <a href="#" class="close-product-modal">
+      <!--a href="#" class="close-product-modal">
         <i class="fas fa-window-close" style="font-size:30px;"></i>
-      </a>
+      </a-->
 
 	</div>
 <!--------------------------------------------------------------------->
