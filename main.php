@@ -3,10 +3,10 @@ include("conexbd.php");
 session_start();
 $id='';
 $varsession=$_SESSION['user']; //-----------variable de session (user)
-//$idsession= $_SESSION['id'];//------------variable de sesion (id)
+$idsession= $_SESSION['id'];//------------variable de sesion (id)
 if(($varsession==null)||($varsession==''))
 {
-    header('Location: index.html');
+    header('Location: unauthorized.html');
 }
 
 ?>
@@ -26,7 +26,8 @@ if(($varsession==null)||($varsession==''))
 <body>
 
 <!---------------------------DE ACA SACO EL ID----------------->
-<span style="display:none;" id="iduser"><?php //echo $idsession;?></span>
+<!---------------------es un span oculto que obtiene el id y de ahi lo saca el ajaxcarrito-------------->
+<span style="display:none;" id="iduser"><?php echo $idsession;?></span>
 <!------------------------------------------------------------->
 
 	<nav class="navbar navbar-expand-lg navbar-dark">
@@ -125,7 +126,7 @@ if(($varsession==null)||($varsession==''))
     <div class="wrapper">
         <!-- Sidebar  -->
         <nav id="sidebar" class="active">
-            <span class="bg-info"><?php echo $varsession; ?></span>
+            <span class="bg-info"><?php echo $idsession; ?></span>
             <ul class="list-items container">
                 <li>
                     <a href="#"><i class="fas fa-shopping-cart"></i>Carrito</a>
@@ -153,8 +154,11 @@ if(($varsession==null)||($varsession==''))
 
 
   <div class="card-deck" style="margin: 20px;">
+
     <h3 class="col-md-12">Ofertas</h3>
-  <div class="card">
+
+    <?php  require('getProd.php'); ?>
+  <!--div class="card">
     <img src="img/products/natura1l.jpg" class="card-img-top" alt="...">
     <div class="card-body">
       <h6 class="card-title">Aceite Natura 1L</h6>
@@ -195,7 +199,7 @@ if(($varsession==null)||($varsession==''))
     </div>
   </div>
   
-</div>
+</div-->
 
 </div>
 
@@ -264,7 +268,7 @@ if(($varsession==null)||($varsession==''))
 
           <div class="col-md-6 row" style="margin: 0 auto; ">
               <p style="color: black; font-size: 15px;">Seleccione Cantidad: </p> 
-               <select name="" id="" class="form-control form-control-sm selectmini">
+               <select name="" id="cant" class="form-control form-control-sm selectmini">
               <option value="">1</option>
               <option value="">2</option>
               <option value="">3</option>
@@ -300,21 +304,12 @@ if(($varsession==null)||($varsession==''))
 
 
 	<script type="text/javascript" src="js/jquery.js"></script>
-  <!-- Popper.JS -->
-    <script src="js/popper.js"></script>
+  <script src="ajax-carrito.js"></script>
+  <script src="js/popper.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/owl.carousel.min.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
 
-
-
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $('#sidebarCollapse').on('click', function () {
-                $('#sidebar').toggleClass('active');
-            });
-        });
-    </script>
 
 
 </body>

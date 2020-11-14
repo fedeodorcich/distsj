@@ -22,27 +22,5 @@ $(document).ready(function(){
 
 
 
-    //-------------------------AJAX PARA EL CARRITO---------------
-
-    $("#addtocart").click(function(event){
-    let id = $("#iduser").val();
-    event.preventDefault();
-    console.log(id);
-    $.ajax({
-            url: 'addtocart.php',
-            type: 'POST',
-            data:{user,producto,cantidad},
-            success: function(data){      
-                console.log(data); 
-                if(data == 1)
-                { 
-                    console.log('funcionó');
-                }
-                else
-                {
-                    console.log('no funcionó');                    
-                } 
-            }
-        });   
-    });  
+   
 });

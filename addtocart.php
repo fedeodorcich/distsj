@@ -2,18 +2,13 @@
 
 //------------------aca hay que hacer la carga de datos en la tabla de carrito----------
 
-$varsession = $_SESSION['user'];
-
-
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
+	$user= $_POST['id'];
+	$producto = $_POST['productId'];
+	$cantidad = $_POST['cant'];
 	
-	$producto = $_POST['producto'];
-	$cantidad = $_POST['cantidad'];
-	
-	$admn = '';
-	$errores = '';
 
 	try {
 		$conexion = new PDO('mysql:host=localhost;dbname=dristr', 'root', '');
@@ -21,10 +16,27 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		echo "Error: " . $th->getMessage();
 	}	
 			
-	$sentencia = $conexion->prepare('INSERT INTO usuario (id, id_usuario, producto, cantidad) VALUES ('0','$varsession', '$producto', '$cantidad')');
+	$sentencia = $conexion->prepare('INSERT INTO carro (id, id_usuario, producto, cantidad) VALUES (null,:id_usuario, :producto, :cantidad)');
 
-	$sentencia->execute();
+
+	$sentencia->execute(array(
+      ':id_usuario' => $user,
+      ':producto' => $producto,
+      ':cantidad' => $cantidad
+   ));
+
+	if(!$sentencia) {
+		echo 0;
+        die("Query failed");
+    }
+    else
+    	echo 1;
 
 }
+else
+{
+	echo 0;
+}
+
 
  ?>
