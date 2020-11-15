@@ -255,7 +255,7 @@ if(($varsession==null)||($varsession==''))
 
 <!---------------------------------------------MODAL DEL PRODUCTO--->
 
-	<div id="product-modal">
+	<div class="product-modal">
 
 		<div class="content row container">
 			<div class="col-md-12" style="padding: 0;">

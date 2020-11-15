@@ -264,7 +264,7 @@ a[data-toggle="collapse"] {
 	width: 100%;
 }
 /*------------------------------------------------------MODAL----------*/
-#product-modal{
+.product-modal{
 	display: none;
 	top: 0;
 	left: 0;
