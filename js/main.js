@@ -41,9 +41,9 @@ $(document).ready(function(){
  
   })
   
-  $(ofertas).ready(function(){
-  		$(".owl-carousel").append(ofertas);
-  });
+
+  $(".owl-carousel").append(ofertas);
+ 
  		
   		
   		
@@ -70,6 +70,9 @@ $(document).ready(function(){
 			$("#login").fadeIn();
 		});
 	});
+
+
+
 	//------------abre el modal y sustituye la img
 	$(".card.item").click(function(){
 		let productId;

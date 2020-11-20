@@ -27,15 +27,16 @@ else{
   <link rel="stylesheet" href="font-awesome/css/all.min.css">
 	<meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+  var array = <?php echo json_encode($ofertas)?>;
+    var idUser = <?php echo $idsession?>;
+</script>
+
 </head>
 
 
 
 
-<script>
-  var array = <?php echo json_encode($ofertas)?>;
-    var idUser = <?php echo $idsession?>;
-</script>
 
 
 <body>
@@ -169,14 +170,13 @@ else{
 
 
 <script src="js/jquery.js"></script>
-
 <script src="js/popper.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/spiner.js"></script>
-<script src="js/main.js"></script>
-  
 <script src="js/owl.carousel.min.js"></script>
 <script src="js/owlresponsive.js"></script> 
+<script src="js/main.js"></script>
+
 
 
 </body>
