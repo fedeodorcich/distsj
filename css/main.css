@@ -26,7 +26,7 @@ body{
 
 #left{
 	width: 60%;
-	background-image: url('../img/Lagos, Portugal.png');
+	background-image: url('../img/hero.jpg');
 	background-size: cover;
 	position: absolute;
 	left: 0;
@@ -127,23 +127,11 @@ nav button{
 }
 
 /*----------------------------------------------------------SIDEBAR----------*/
-*
-    DEMO STYLE
-*/
 
-@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
-body {
-    font-family: 'Poppins', sans-serif;
-    background: #fafafa;
-}
 
-p {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.1em;
-    font-weight: 300;
-    line-height: 1.7em;
-    color: #999;
-}
+
+
+
 
 a,
 a:hover,
@@ -192,6 +180,7 @@ a:focus {
     background: #252525;
     color: #fff;
     transition: all 0.3s;
+  
 }
 
 #sidebar span{
@@ -199,7 +188,7 @@ a:focus {
 	width: 100%;
 }
 
-#sidebar.active {
+#sidebar.hidder {
     margin-left: -250px;
 }
 
@@ -250,10 +239,10 @@ a[data-toggle="collapse"] {
 
 @media (max-width: 768px) {
     #sidebar {
-        margin-left: -250px;
+        margin-left: 0px;
     }
-    #sidebar.active {
-        margin-left: 0;
+    #sidebar.hidder {
+        margin-left: -250px;
     }
     #sidebarCollapse span {
         display: none;
@@ -315,19 +304,18 @@ a[data-toggle="collapse"] {
 }
 
 .description-product{
-	font-size: 15px;
+	font-size: 13px;
 	font-weight: lighter;
 	font-style: italic;
 	padding: 10px;
+	margin: 0;
 }
 
 
 .close-product-modal{
-	border-radius: 100%;
 	position: absolute;
-	bottom: 10%;
-	left: 0;
-	right: 0;
+	top: 5px;
+	right: 23%;
 	width: 30px;
 	height: 30px;
 	margin: 0 auto;
@@ -346,6 +334,17 @@ a[data-toggle="collapse"] {
 
 /*---------------------------------------------*/
 
+
+/*-----------------------------owlcarrousel*/
+.owl-nav{
+	display: none;
+}
+
+.owl-dots .active{
+	border: none;
+	box-shadow: none;
+}
+/*-------------------------------------------*/
 
 
 

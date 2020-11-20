@@ -1,6 +1,7 @@
 <?php 
-
+	
 	require("conexbd.php");
+	session_start();
 	$user=$_POST['user'];
 	$pass=$_POST['pass'];
 
@@ -15,20 +16,20 @@
 
 
 
-	//--------pregunta si el usuario existe, y en caso de que exista pregunta que tipo de usuario es-------------------------------<3<3<3<3<3<3
+	//--------pregunta si el usuario existe, y en caso de que exista pregunta que tipo de usuario es-------------------------------
 
 	if(($row!=false)&&($row[0]['nombre']==$user))
 	{
 		if($row[0]['admn']==false)
 		{
-			session_start();//---se inicia la sesion
+			
 			$_SESSION['user']=$row[0]['nombre'];//---se crea la variable de sesion
 			$_SESSION['id']=$row[0]['id'];
 			echo 1;
 		}
 		else
 		{
-			session_start();//---se inicia la sesion
+			
 			$_SESSION['user']=$row[0]['nombre'];//---se crea la variable de sesion
 			echo 2;
 		}
