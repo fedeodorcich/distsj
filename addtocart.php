@@ -2,7 +2,7 @@
 
 include('conexbd.php');
 
-$user= $_POST['id'];
+$user= $_POST['idUser'];
 $producto = $_POST['productId'];
 $cantidad = $_POST['cant'];
 	

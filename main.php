@@ -8,16 +8,16 @@ if(($varsession==null)||($varsession==''))
 {
     header('Location: unauthorized.html');
 }
-else{
-  require('getProd.php');
-}
+
+
 ?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Distribuidora San Juan</title>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-
   <!--------------------------CARROUSEL-------------------->
   <link rel="stylesheet" href="css/owl.carousel.min.css">
   <link rel="stylesheet" href="css/owl.theme.default.css">
@@ -27,10 +27,7 @@ else{
   <link rel="stylesheet" href="font-awesome/css/all.min.css">
 	<meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script>
-  var array = <?php echo json_encode($ofertas)?>;
-    var idUser = <?php echo $idsession?>;
-</script>
+  
 
 </head>
 
@@ -81,7 +78,7 @@ else{
         <nav id="sidebar" class="hidder">
             <span class="bg-info"><?php //echo $idsession; ?></span>
             <ul class="list-items container">
-                <li>
+                <li id="cart-btn">
                     <a href="#"><i class="fas fa-shopping-cart"></i>Carrito</a>
                 </li>
                 <li>
@@ -116,6 +113,7 @@ else{
 
               <div class="owl-carousel owl-theme">
                 
+                    <?php include('getProd.php'); ?>
 
               </div>
 
@@ -127,21 +125,24 @@ else{
 
 </div>
 
+
+
+
 <!---------------------------------------------MODAL DEL PRODUCTO--->
 
 	<div class="product-modal">
 
 		<div class="content row container">
 			<div class="col-md-12" style="padding: 0;">
-        <img src="" class="container text-center" style="max-width: 60%;">
+        <img src="" class="container text-center big-img" style="max-width: 50%;">
       </div>
       
       <p class="description-product text-center">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla tenetur quod animi unde. Dignissimos dolorem libero, ipsa quos blanditiis, assumenda.</p>
 
       <form class="col-md-12 row container text-center">
 
-          <div class="col-md-6 row" style="margin: 0 auto;">
-              <p style="color: black; font-size: 15px;">Seleccione Cantidad: </p> 
+          <div class="col-md-6" style="margin: 0 auto;">
+              <p class="text-center" style="color: black; font-size: 15px;">Seleccione Cantidad: </p> 
               <input id="cant-cart" class="form-control-sm" type="number" value="0" min="1" max="" step="1"/>
           </div>
          
@@ -161,20 +162,46 @@ else{
 
 
 
+<!------------------------------------MODAL CARRITO-------------------->
+<div id="modal-cart">
+    <div class="content container" style="padding: 10px;">
+        <h3 class="text-center">El Carrito</h3>
+        <div>
+          <ul id="list-cart">
+            <li class="list-group-item row" style="margin-bottom: 5px;" >
+                <div class="col-md-2">
+                    <img src="img/products/coca.jpg" class="img-fluid">
+                </div>
+                <div class="col-md-10 row">
+                    <p class="col-md-8">Coca-Cola Zero 2.5Lts</p>
+                    <span class="col-md-2">1000</span>
+                    <span class="col-md-2">$50.889</span>
+                </div>
+            </li>
+          </ul>
+              
+        </div>
+         <a href="#" class="btn btn-custom col" id="addpedido">Confirmar Pedido</a>
+    </div>
+    <a href="#" class="close-cart-modal">
+        <i class="far fa-times-circle" style="font-size:30px;color: #ffffff;"></i>
+      </a>
+</div>
+<!--------------------------------------------------------------------->
 
-	<footer>
-		
-	</footer>
 
 
-
-
+<script>
+    var array = <?php echo json_encode($ofertas)?>;
+    var idUser = <?php echo $idsession?>;
+    console.log(array);
+</script> 
 <script src="js/jquery.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/owlresponsive.js"></script>
 <script src="js/popper.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/spiner.js"></script>
-<script src="js/owl.carousel.min.js"></script>
-<script src="js/owlresponsive.js"></script> 
 <script src="js/main.js"></script>
 
 
