@@ -168,16 +168,7 @@ if(($varsession==null)||($varsession==''))
         <h3 class="text-center">El Carrito</h3>
         <div>
           <ul id="list-cart">
-            <li class="list-group-item row" style="margin-bottom: 5px;" >
-                <div class="col-md-2">
-                    <img src="img/products/coca.jpg" class="img-fluid">
-                </div>
-                <div class="col-md-10 row">
-                    <p class="col-md-8">Coca-Cola Zero 2.5Lts</p>
-                    <span class="col-md-2">1000</span>
-                    <span class="col-md-2">$50.889</span>
-                </div>
-            </li>
+            
           </ul>
               
         </div>

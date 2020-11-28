@@ -44,20 +44,20 @@ $(document).ready(function(){
 	//------------llama a la funcion de agregar al carrito
 	$("#addtocart").click(function(){
 		 addToCart(productId,disponible);
-		 console.log("entro");
 		 $(".product-modal").fadeOut();
 	});
 	//------------------------------------------------
 	
 	
-
 	
-	//----------cierra modal------------------
+	//----------cierra modales------------------
 	$(".close-product-modal").click(function(){
 		$(".product-modal").fadeOut();
 	});
 	$(".close-cart-modal").click(function(){
-		$(".modal-cart").fadeOut();
+		$("#modal-cart").fadeOut(function(){
+			$("#list-cart").empty();
+		});
 	});
 	//----------------------------------------
 
