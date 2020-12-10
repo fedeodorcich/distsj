@@ -54,10 +54,10 @@ if(($varsession==null)||($varsession==''))
 
   <div id="search-form">
    
-    <form class="form-inline" >
+    <!--form class="form-inline" >
       <input class="form-control form-control-sm mr-sm-2" type="search" placeholder="Búsqueda" aria-label="Search">
       <button class="btn btn-sm btn-light my-2 my-sm-0" type="submit">Buscar</button>
-    </form>
+    </form-->
   </div>
 
   
@@ -72,25 +72,28 @@ if(($varsession==null)||($varsession==''))
 
 
 
-<body>
+
     <div class="wrapper">
         <!-- - --------------------------------------------------- Sidebar  -->
         <nav id="sidebar" class="hidder">
             <span class="bg-info"><?php //echo $idsession; ?></span>
             <ul class="list-items container">
+                <li>
+                    <a href="user.php"><i class="fas fa-user"></i>Perfil</a>
+                </li>
                 <li id="cart-btn">
                     <a href="#"><i class="fas fa-shopping-cart"></i>Carrito</a>
                 </li>
-                <li>
+                <li id="pedido-btn">
                     <a href="#"><i class="fas fa-box-open"></i>Pedidos</a>
                 </li>
-                <li>
+                <!--li>
                     <a href="#"><i class="fas fa-envelope"></i>Contacto</a>
-                </li>
+                </li-->
             </ul>
-            <form action="destroyer.php">
+            <form action="destroyer.php" class="container" >
                 <input type="submit" name="" id="session-destroyer" name="session-destroyer" style="display: none;">
-                <label for="session-destroyer" class="btn btn-danger"><i class="fas fa-sign-out-alt"></i>Cerrar Sesión</label>
+                <label for="session-destroyer" class="btn btn-danger" style="cursor:pointer;"><i class="fas fa-sign-out-alt"></i>Cerrar Sesión</label>
             </form>
             
 
@@ -105,7 +108,7 @@ if(($varsession==null)||($varsession==''))
       
 
       <!-----------------------------------BARRA DE OFERTAS------------------->
-      <div id="mainer" class="col-md-11 container" style="background-color: #ffffff; border-radius: 5px; padding: 20px 0; margin-top:2em;">
+      <div id="mainer" class="col-md-11 container" style="background-color: #ffffff; border-radius: 5px; padding: 10px 0; margin-top:2em;">
 
           <div class="" style="margin: 20px;">
 
@@ -167,10 +170,13 @@ if(($varsession==null)||($varsession==''))
     <div class="content container" style="padding: 10px;">
         <h3 class="text-center">El Carrito</h3>
         <div>
-          <ul id="list-cart">
+          <ul id="list-cart" class="container martop" style="overflow-y:scroll;height: 350px;">
             
           </ul>
-              
+          <div class="totalizer col-md-3 container row float-right">
+            <p>Total : </p><h5 id="total-cart" class="text-success"></h5>
+          </div>
+          
         </div>
          <a href="#" class="btn btn-custom col" id="addpedido">Confirmar Pedido</a>
     </div>
@@ -182,9 +188,48 @@ if(($varsession==null)||($varsession==''))
 
 
 
+<!------------------------------------MODAL PEDIDOS-------------------->
+<div id="modal-pedido">
+    <div class="content container" style="padding: 10px;">
+        <h3 class="text-center">Pedidos Confirmados</h3>
+        <div>
+          <ul id="list-pedidos"  class="container martop" style="overflow-y:scroll;height: 350px;">
+            
+          </ul>
+              
+        </div>
+    </div>
+    <a href="#" class="close-pedidos-modal">
+        <i class="far fa-times-circle" style="font-size:30px;color: #ffffff;"></i>
+      </a>
+</div>
+<!--------------------------------------------------------------------->
+
+
+
+
+
+
+
+<div id="load-screen">
+    <div class="col-md-6 container text-center" style="margin-top: 10em;">
+      <div class=" col-md-12 container">
+        <img src="img/logo-primary.png" class="img-fluid col-md-12" style="width: 70%;">
+      </div>
+        <div class="spinner-border col-md-12 container" style="width: 3rem; height: 3rem;color:#ae174c; margin-top: 30%;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    
+</div>
+
+
 <script>
+
     var array = <?php echo json_encode($ofertas)?>;
+
     var idUser = <?php echo $idsession?>;
+    
     console.log(array);
 </script> 
 <script src="js/jquery.js"></script>
