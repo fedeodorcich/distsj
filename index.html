@@ -7,6 +7,42 @@
 	<link rel="stylesheet" type="text/css" href="css/main.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		function mostrarContrasena(){
+			var tipo = document.getElementById("password");
+			if(tipo.type == "password"){
+				tipo.type = "text";
+			}else{
+				tipo.type = "password";
+			}
+		}
+	</script>
+
+	<script type="text/javascript">
+		function mostrarPassword(){
+			var cambio = document.getElementById("txtPassword");
+			if(cambio.type == "password"){
+				cambio.type = "text";
+				$('.icon').removeClass('fa fa-eye-slash').addClass('fa fa-eye');
+			}else{
+				cambio.type = "password";
+				$('.icon').removeClass('fa fa-eye').addClass('fa fa-eye-slash');
+			}
+		} 
+		function mostrarPassword2(){
+			var cambio = document.getElementById("txtPassword2");
+			if(cambio.type == "password"){
+				cambio.type = "text";
+				$('.icon').removeClass('fa fa-eye-slash').addClass('fa fa-eye');
+			}else{
+				cambio.type = "password";
+				$('.icon').removeClass('fa fa-eye').addClass('fa fa-eye-slash');
+			}
+		} 
+	</script>
 
 </head>
 
@@ -30,10 +66,10 @@
 			<button id="login-btn" class="col-md-12 btn btn-custom martopmax">Ingresar</button>
 			<a href="#" id="to-reg" class="text-center secondary-link center-block">Registrar</a>
 			
-		<!-- Button visita 
+		<!-- Button visita -->
 		<button id="visita" class="col-md-4 center-block btn btn-custom">
 		DE VISITA
-		</button>-->	
+		</button>	
 
 		</form>
 		<!-------------------------------------------FORMULARIO DE REGISTRO-->
@@ -41,9 +77,12 @@
 			<img src="img/logo-primary.png" class="img-fluid marbot">
 			<input type="text" class="col-md-12 form-control martopmin" name="usuario" placeholder="Nombre">
 			<input type="text" class="col-md-12 form-control martopmin" name="correo" placeholder="Email">
-			<input type="text" class="col-md-12 form-control martopmin" name="telefono" placeholder="Teléfono">
-			<input type="password" class="col-md-12 form-control martopmin" name="password" placeholder="Contraseña">
-			<input type="password" class="col-md-12 form-control martopmin" name="password2" placeholder="Repetir contraseña">
+			<input type="tel" class="col-md-12 form-control martopmin" name="telefono" placeholder="Teléfono">
+			<input type="password" class="col-md-12 form-control martopmin" name="password" id="txtPassword" placeholder="Contraseña">
+			<button id="show_password" class="btn btn-primary" type="button" onclick="mostrarPassword()"> <span class="fa fa-eye-slash icon"></span> </button>
+			<input type="password" class="col-md-12 form-control martopmin" name="password2" id="txtPassword2" placeholder="Repetir contraseña">
+			<button id="show_password" class="btn btn-primary" type="button" onclick="mostrarPassword2()"> <span class="fa fa-eye-slash icon"></span> </button>
+
 			<div class="row text-center">
 				<a href="#" class="secondary-link" id="back-tolog">Volver</a>
                 <button class="btn btn-custom">Registrar</button>
@@ -53,26 +92,13 @@
 
 	</div>
 
-<div id="load-screen">
-    <div class="col-md-6 container text-center" style="margin-top: 10em;">
-      <div class=" col-md-12 container">
-        <img src="img/logo-primary.png" class="img-fluid col-md-12" style="width: 70%;">
-      </div>
-        <div class="spinner-border col-md-12 container" style="width: 3rem; height: 3rem;color:#ae174c; margin-top: 30%;" role="status">
-            <span class="sr-only">Loading...</span>
-        </div>
-    </div>
-    
-</div>
 
 	<script type="text/javascript" src="js/jquery.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<!--script type="text/javascript" src="js/main.js"></script-->
 	<script type="text/javascript" src="ajax.js"></script>
 	<script>
-		$(document).ready(function(){
-			 $("#load-screen").fadeOut();
-			 $("#to-reg").click(function(){
+		$("#to-reg").click(function(){
 		$("#login").fadeOut(function(){
 			$("#signup").fadeIn();
 		});
@@ -82,8 +108,6 @@
 			$("#login").fadeIn();
 		});
 	});
-		});
-		
 	</script>
 
 </body>

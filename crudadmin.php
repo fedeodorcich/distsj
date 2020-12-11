@@ -3,7 +3,21 @@
 include("conexbd.php");
 
 ?>
-
+<?php
+/**
+ * Oculta parte de un string
+ * @param  string  $str   Texto a ocultar
+ * @param  integer $start Cuantos caracteres dejar sin ocultar al inicio
+ * @param  integer $end   Cuantos caracteres dejar sin ocultar al final
+ * @author Jodacame 
+ * @return string
+ */
+function hidden($str, $start = 1, $end = 1)
+{
+    $len = strlen($str);
+    return substr($str, 0, $start) . str_repeat('*', $len - ($start + $end)) . substr($str, $len - $end, $end);
+}
+?>
 <?php include("view/header.html")?> 
 <div class="container p-4">
  <div class="row">
@@ -41,12 +55,14 @@ include("conexbd.php");
             $resultado = $statament->fetchAll();
 
            foreach ($resultado as $row)
-           /*while($row = mysqli_fetch_array($result_tablitas))*/ { ?>
+           /*while($row = mysqli_fetch_array($result_tablitas))*/ { 
+            $pas = $row['pass'];
+             ?>
                 <tr>
                         <td><?php echo $row['nombre']  ?></td>
                         <td><?php echo $row['correo']  ?></td>
                         <td><?php echo $row['telefono']  ?></td>
-                        <td><?php echo $row['pass']  ?></td>
+                        <td><?php echo hidden("$pas",0,3) ?></td>
                         <td><?php echo $row['admn']  ?></td>
                       <!--  <td><?php// echo $row['created_ad']  ?></td> -->
                         <td>

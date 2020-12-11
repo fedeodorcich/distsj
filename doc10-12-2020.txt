@@ -1,0 +1,3 @@
+----10/12/20----
+* se oculto el text de la contraseña(se toco el archivo crudadmin.php)
+* se agrego el boton de ocultar y mostrar contraseña(se toco el archivo index.html)
